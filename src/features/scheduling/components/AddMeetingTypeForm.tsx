@@ -1,10 +1,12 @@
-import React, { useState } from "react"
+import { useState } from "react"
 
 export default function AddMeetingTypeForm({ onAdd }: any) {
   const [name, setName] = useState("")
   const [duration, setDuration] = useState(30)
 
   function submit() {
+    if (!name) return
+
     onAdd({
       id: crypto.randomUUID(),
       name,
@@ -25,7 +27,7 @@ export default function AddMeetingTypeForm({ onAdd }: any) {
       <input
         placeholder="Meeting name"
         value={name}
-        onChange={(e: { target: { value: any } }) => setName(e.target.value)}
+        onChange={e => setName(e.target.value)}
       />
 
       <input
