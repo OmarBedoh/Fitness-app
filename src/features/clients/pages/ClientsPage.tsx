@@ -1,36 +1,10 @@
-import AppShell from "../../../layout/AppShell"
-import { useClients } from "../useClients"
-import AddClientForm from "../components/AddClientForm"
-
 export default function ClientsPage() {
-  const { clients, addClient } = useClients()
-
   return (
-    <AppShell>
-      <h1 style={{ fontSize: "20px", marginBottom: "16px" }}>
+    <div style={{ padding: "40px 48px", fontFamily: "DM Sans, sans-serif" }}>
+      <h1 style={{ fontSize: 28, fontWeight: 700, color: "#0f1117", letterSpacing: "-0.6px" }}>
         Clients
       </h1>
-
-      <AddClientForm onAdd={addClient} />
-
-      <div
-        style={{
-          border: "1px solid var(--border-subtle)",
-          background: "var(--bg-surface)",
-        }}
-      >
-        {clients.map(c => (
-          <div
-            key={c.id}
-            style={{
-              padding: "12px",
-              borderBottom: "1px solid var(--border-subtle)"
-            }}
-          >
-            {c.name} — {c.email}
-          </div>
-        ))}
-      </div>
-    </AppShell>
+      <p style={{ color: "#78716c" }}>Client management coming soon.</p>
+    </div>
   )
 }
